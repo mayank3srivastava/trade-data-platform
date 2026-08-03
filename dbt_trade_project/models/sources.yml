@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: raw
+    database: TRADE_DB
+    schema: RAW
+    tables:
+      - name: raw_trades
+        loaded_at_field: ingested_at
+        freshness:
+          warn_after: {count: 30, period: minute}
+          error_after: {count: 120, period: minute}

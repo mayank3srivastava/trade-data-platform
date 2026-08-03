@@ -1,0 +1,32 @@
+version: 2
+models:
+  - name: current_trades
+    description: Latest accepted payload per trade ID. Same version replaces the existing payload.
+    columns:
+      - name: trade_id
+        tests: [not_null, unique]
+      - name: version
+        tests: [not_null]
+      - name: side
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['BUY', 'SELL']
+      - name: currency
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['USD', 'EUR', 'GBP', 'JPY']
+  - name: rejected_trades
+    columns:
+      - name: event_id
+        tests: [not_null, unique]
+      - name: rejection_reason
+        tests: [not_null]
+  - name: trade_status
+    columns:
+      - name: trade_status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['VALID', 'EXPIRED']

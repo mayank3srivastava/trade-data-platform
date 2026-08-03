@@ -1,0 +1,39 @@
+@startuml
+skinparam componentStyle rectangle
+actor "Trade Producer" as producer
+component "Python Mock Generator" as generator
+component "Internal Stage" as stage
+component "COPY INTO Loader" as loader
+database "RAW.RAW_TRADES" as raw
+queue "RAW_TRADES_STREAM\n(optional CDC)" as stream
+component "Airflow" as airflow
+component "dbt Models + Tests" as dbt
+database "CURATED.CURRENT_TRADES" as current
+database "CURATED.REJECTED_TRADES" as rejected
+database "CURATED.TRADE_STATUS" as status
+component "Streamlit / BI" as dashboard
+component "Snowflake Account Usage\nAlerts + Resource Monitor" as monitoring
+component "GitHub Actions" as cicd
+component "Terraform" as terraform
+
+producer --> generator
+generator --> stage
+stage --> loader
+loader --> raw
+raw --> stream
+raw --> dbt
+airflow --> generator
+airflow --> loader
+airflow --> dbt
+dbt --> current
+dbt --> rejected
+current --> status
+status --> dashboard
+rejected --> dashboard
+raw --> monitoring
+current --> monitoring
+rejected --> monitoring
+cicd --> dbt
+cicd --> terraform
+terraform --> raw
+@enduml
