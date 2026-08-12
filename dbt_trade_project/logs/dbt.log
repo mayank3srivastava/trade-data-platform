@@ -1,0 +1,981 @@
+[0m16:43:06.078176 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c5d550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108d83750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108d83890>]}
+
+
+============================== 16:43:06.094029 | 85e96cdf-9307-4623-9003-7b3e4e07e152 ==============================
+[0m16:43:06.094029 [info ] [MainThread]: Running with dbt=1.10.11
+[0m16:43:06.094400 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'quiet': 'False', 'invocation_command': 'dbt debug', 'write_json': 'True', 'debug': 'False', 'fail_fast': 'False', 'log_format': 'default', 'introspect': 'True', 'profiles_dir': '/Users/mayank/.dbt', 'static_parser': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'target_path': 'None', 'warn_error': 'None', 'indirect_selection': 'eager', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/logs', 'version_check': 'True', 'empty': 'None', 'partial_parse': 'True'}
+[0m16:43:06.118599 [info ] [MainThread]: dbt version: 1.10.11
+[0m16:43:06.118866 [info ] [MainThread]: python version: 3.13.2
+[0m16:43:06.119013 [info ] [MainThread]: python path: /Users/mayank/Documents/trade-data-platform/trade-data-platform/.venv-dbt/bin/python3.13
+[0m16:43:06.119150 [info ] [MainThread]: os info: macOS-15.6.1-arm64-arm-64bit-Mach-O
+[0m16:43:06.472875 [info ] [MainThread]: Using profiles dir at /Users/mayank/.dbt
+[0m16:43:06.473184 [info ] [MainThread]: Using profiles.yml file at /Users/mayank/.dbt/profiles.yml
+[0m16:43:06.473340 [info ] [MainThread]: Using dbt_project.yml file at /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/dbt_project.yml
+[0m16:43:06.473964 [info ] [MainThread]: adapter type: snowflake
+[0m16:43:06.474158 [info ] [MainThread]: adapter version: 1.10.2
+[0m16:43:06.526303 [info ] [MainThread]: Configuration:
+[0m16:43:06.526602 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m16:43:06.526749 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m16:43:06.526882 [info ] [MainThread]: Required dependencies:
+[0m16:43:06.527441 [debug] [MainThread]: Executing "git --help"
+[0m16:43:06.544473 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:43:06.545202 [debug] [MainThread]: STDERR: "b''"
+[0m16:43:06.545414 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:43:06.545578 [info ] [MainThread]: Connection:
+[0m16:43:06.545758 [info ] [MainThread]:   account: QLORKRP-FM10962
+[0m16:43:06.545887 [info ] [MainThread]:   user: MAYANKTOC
+[0m16:43:06.546010 [info ] [MainThread]:   database: TRADE_DB
+[0m16:43:06.546122 [info ] [MainThread]:   warehouse: TRADE_WH
+[0m16:43:06.546234 [info ] [MainThread]:   role: TRADE_PIPELINE_ROLE
+[0m16:43:06.546350 [info ] [MainThread]:   schema: DBT
+[0m16:43:06.546464 [info ] [MainThread]:   authenticator: None
+[0m16:43:06.546575 [info ] [MainThread]:   oauth_client_id: None
+[0m16:43:06.546689 [info ] [MainThread]:   query_tag: None
+[0m16:43:06.546800 [info ] [MainThread]:   client_session_keep_alive: False
+[0m16:43:06.546913 [info ] [MainThread]:   host: None
+[0m16:43:06.547024 [info ] [MainThread]:   port: None
+[0m16:43:06.547134 [info ] [MainThread]:   proxy_host: None
+[0m16:43:06.547244 [info ] [MainThread]:   proxy_port: None
+[0m16:43:06.547360 [info ] [MainThread]:   protocol: None
+[0m16:43:06.547469 [info ] [MainThread]:   connect_retries: 1
+[0m16:43:06.547578 [info ] [MainThread]:   connect_timeout: None
+[0m16:43:06.547688 [info ] [MainThread]:   retry_on_database_errors: False
+[0m16:43:06.547798 [info ] [MainThread]:   retry_all: False
+[0m16:43:06.547909 [info ] [MainThread]:   insecure_mode: False
+[0m16:43:06.548016 [info ] [MainThread]:   reuse_connections: True
+[0m16:43:06.548123 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m16:43:06.548530 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m16:43:06.610854 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m16:43:06.725870 [debug] [MainThread]: Using snowflake connection "debug"
+[0m16:43:06.726139 [debug] [MainThread]: On debug: select 1 as id
+[0m16:43:06.726306 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:43:08.338357 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.612 seconds
+[0m16:43:08.341634 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m16:43:08.342499 [info ] [MainThread]: [32mAll checks passed![0m
+[0m16:43:08.367201 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 2.337006, "process_in_blocks": "0", "process_kernel_time": 0.336133, "process_mem_max_rss": "168132608", "process_out_blocks": "0", "process_user_time": 1.093607}
+[0m16:43:08.368099 [debug] [MainThread]: Command `dbt debug` succeeded at 16:43:08.367964 after 2.34 seconds
+[0m16:43:08.368488 [debug] [MainThread]: Connection 'debug' was left open.
+[0m16:43:08.368783 [debug] [MainThread]: On debug: Close
+[0m16:43:08.545541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb11cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bab5a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11029c6b0>]}
+[0m16:43:08.546497 [debug] [MainThread]: Flushing usage events
+[0m16:43:09.608408 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:44:21.229161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103e01550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104f27750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104f27890>]}
+
+
+============================== 16:44:21.232490 | fe80349f-235c-475c-a8d3-3185cac27cd7 ==============================
+[0m16:44:21.232490 [info ] [MainThread]: Running with dbt=1.10.11
+[0m16:44:21.232830 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'log_format': 'default', 'empty': 'False', 'log_cache_events': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'profiles_dir': '/Users/mayank/.dbt', 'printer_width': '80', 'version_check': 'True', 'introspect': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'no_print': 'None', 'invocation_command': 'dbt run', 'log_path': '/Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/logs', 'partial_parse': 'True', 'use_colors': 'True', 'target_path': 'None'}
+[0m16:44:21.657802 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fe80349f-235c-475c-a8d3-3185cac27cd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1042336f0>]}
+[0m16:44:21.686391 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fe80349f-235c-475c-a8d3-3185cac27cd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c819d0>]}
+[0m16:44:21.687221 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m16:44:21.756810 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m16:44:21.757331 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m16:44:21.757523 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fe80349f-235c-475c-a8d3-3185cac27cd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105be7750>]}
+[0m16:44:22.489049 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fe80349f-235c-475c-a8d3-3185cac27cd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10612d7c0>]}
+[0m16:44:22.536465 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/manifest.json
+[0m16:44:22.538827 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/semantic_manifest.json
+[0m16:44:22.559165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fe80349f-235c-475c-a8d3-3185cac27cd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064158d0>]}
+[0m16:44:22.559415 [info ] [MainThread]: Found 5 models, 10 data tests, 1 source, 520 macros
+[0m16:44:22.559579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fe80349f-235c-475c-a8d3-3185cac27cd7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10615f860>]}
+[0m16:44:22.560660 [info ] [MainThread]: 
+[0m16:44:22.560849 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:44:22.560989 [info ] [MainThread]: 
+[0m16:44:22.561254 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m16:44:22.563818 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB'
+[0m16:44:22.564165 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB'
+[0m16:44:22.564472 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB'
+[0m16:44:22.623168 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB"
+[0m16:44:22.623491 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB"
+[0m16:44:22.623679 [debug] [ThreadPool]: On list_TRADE_DB: show terse schemas in database TRADE_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB"} */
+[0m16:44:22.623889 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB"
+[0m16:44:22.624042 [debug] [ThreadPool]: On list_TRADE_DB: show terse schemas in database TRADE_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB"} */
+[0m16:44:22.624193 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:44:22.624332 [debug] [ThreadPool]: On list_TRADE_DB: show terse schemas in database TRADE_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB"} */
+[0m16:44:22.624463 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:44:22.624665 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:44:23.856094 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.232 seconds
+[0m16:44:24.242268 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.617 seconds
+[0m16:44:24.246207 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.622 seconds
+[0m16:44:24.248648 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TRADE_DB, now create_TRADE_DB_DBT_STAGING)
+[0m16:44:24.249142 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TRADE_DB, now create_TRADE_DB_DBT_INTERMEDIATE)
+[0m16:44:24.249553 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TRADE_DB, now create_TRADE_DB_DBT_CURATED)
+[0m16:44:24.250038 [debug] [ThreadPool]: Creating schema "database: "TRADE_DB"
+schema: "DBT_STAGING"
+"
+[0m16:44:24.250504 [debug] [ThreadPool]: Creating schema "database: "TRADE_DB"
+schema: "DBT_INTERMEDIATE"
+"
+[0m16:44:24.250929 [debug] [ThreadPool]: Creating schema "database: "TRADE_DB"
+schema: "DBT_CURATED"
+"
+[0m16:44:24.257271 [debug] [ThreadPool]: Using snowflake connection "create_TRADE_DB_DBT_STAGING"
+[0m16:44:24.259389 [debug] [ThreadPool]: Using snowflake connection "create_TRADE_DB_DBT_INTERMEDIATE"
+[0m16:44:24.261059 [debug] [ThreadPool]: Using snowflake connection "create_TRADE_DB_DBT_CURATED"
+[0m16:44:24.261367 [debug] [ThreadPool]: On create_TRADE_DB_DBT_STAGING: create schema if not exists TRADE_DB.DBT_STAGING
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "create_TRADE_DB_DBT_STAGING"} */
+[0m16:44:24.261638 [debug] [ThreadPool]: On create_TRADE_DB_DBT_INTERMEDIATE: create schema if not exists TRADE_DB.DBT_INTERMEDIATE
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "create_TRADE_DB_DBT_INTERMEDIATE"} */
+[0m16:44:24.261882 [debug] [ThreadPool]: On create_TRADE_DB_DBT_CURATED: create schema if not exists TRADE_DB.DBT_CURATED
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "create_TRADE_DB_DBT_CURATED"} */
+[0m16:44:24.354650 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c656c2-0001-f9c4-0000-000f700a62cd
+[0m16:44:24.355245 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on database 'TRADE_DB'. Your primary role TRADE_PIPELINE_ROLE must have CREATE SCHEMA granted on DATABASE TRADE_DB.
+[0m16:44:24.355786 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro create_schema
+[0m16:44:24.356116 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m16:44:24.356747 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c656c2-0001-f9f5-0000-000f700ab0d9
+[0m16:44:24.357535 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on database 'TRADE_DB'. Your primary role TRADE_PIPELINE_ROLE must have CREATE SCHEMA granted on DATABASE TRADE_DB.
+[0m16:44:24.357997 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro create_schema
+[0m16:44:24.358313 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m16:44:24.359254 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c656c2-0001-f9f5-0000-000f700ab0d5
+[0m16:44:24.359664 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on database 'TRADE_DB'. Your primary role TRADE_PIPELINE_ROLE must have CREATE SCHEMA granted on DATABASE TRADE_DB.
+[0m16:44:24.360109 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro create_schema
+[0m16:44:24.360442 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m16:44:24.361069 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:44:24.361354 [debug] [MainThread]: Connection 'create_TRADE_DB_DBT_STAGING' was left open.
+[0m16:44:24.361620 [debug] [MainThread]: On create_TRADE_DB_DBT_STAGING: Close
+[0m16:44:24.464805 [debug] [MainThread]: Connection 'create_TRADE_DB_DBT_CURATED' was left open.
+[0m16:44:24.465450 [debug] [MainThread]: On create_TRADE_DB_DBT_CURATED: Close
+[0m16:44:24.576815 [debug] [MainThread]: Connection 'create_TRADE_DB_DBT_INTERMEDIATE' was left open.
+[0m16:44:24.577338 [debug] [MainThread]: On create_TRADE_DB_DBT_INTERMEDIATE: Close
+[0m16:44:24.688498 [info ] [MainThread]: 
+[0m16:44:24.688843 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 2.13 seconds (2.13s).
+[0m16:44:24.689173 [error] [MainThread]: Encountered an error:
+Database Error
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on database 'TRADE_DB'. Your primary role TRADE_PIPELINE_ROLE must have CREATE SCHEMA granted on DATABASE TRADE_DB.
+[0m16:44:24.693997 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.5079207, "process_in_blocks": "0", "process_kernel_time": 0.529843, "process_mem_max_rss": "198705152", "process_out_blocks": "0", "process_user_time": 2.025642}
+[0m16:44:24.694381 [debug] [MainThread]: Command `dbt run` failed at 16:44:24.694318 after 3.51 seconds
+[0m16:44:24.694618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104db6390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110fef5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110fef540>]}
+[0m16:44:24.694859 [debug] [MainThread]: Flushing usage events
+[0m16:44:25.651263 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:47:58.365746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106751550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1106b7750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1106b7890>]}
+
+
+============================== 16:47:58.368983 | 9fc0097b-9374-4785-8953-62fd31bd9711 ==============================
+[0m16:47:58.368983 [info ] [MainThread]: Running with dbt=1.10.11
+[0m16:47:58.369296 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'quiet': 'False', 'debug': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'version_check': 'True', 'introspect': 'True', 'warn_error': 'None', 'no_print': 'None', 'empty': 'False', 'invocation_command': 'dbt run', 'use_colors': 'True', 'log_format': 'default', 'partial_parse': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'printer_width': '80', 'profiles_dir': '/Users/mayank/.dbt', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/logs', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'cache_selected_only': 'False'}
+[0m16:47:58.777221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cc36f0>]}
+[0m16:47:58.805305 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112c719d0>]}
+[0m16:47:58.806120 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m16:47:58.870548 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m16:47:58.987461 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:47:58.987723 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:47:59.012540 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112bd7a50>]}
+[0m16:47:59.062477 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/manifest.json
+[0m16:47:59.064221 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/semantic_manifest.json
+[0m16:47:59.082125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1105534d0>]}
+[0m16:47:59.082390 [info ] [MainThread]: Found 5 models, 10 data tests, 1 source, 520 macros
+[0m16:47:59.082563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112d00910>]}
+[0m16:47:59.083663 [info ] [MainThread]: 
+[0m16:47:59.083842 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:47:59.083975 [info ] [MainThread]: 
+[0m16:47:59.084238 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m16:47:59.086717 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB'
+[0m16:47:59.087954 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB'
+[0m16:47:59.098797 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB'
+[0m16:47:59.150304 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB"
+[0m16:47:59.150620 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB"
+[0m16:47:59.150802 [debug] [ThreadPool]: On list_TRADE_DB: show terse schemas in database TRADE_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB"} */
+[0m16:47:59.150986 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB"
+[0m16:47:59.151137 [debug] [ThreadPool]: On list_TRADE_DB: show terse schemas in database TRADE_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB"} */
+[0m16:47:59.151291 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:47:59.151427 [debug] [ThreadPool]: On list_TRADE_DB: show terse schemas in database TRADE_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB"} */
+[0m16:47:59.151555 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:47:59.152202 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:48:00.609603 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.458 seconds
+[0m16:48:00.687453 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.535 seconds
+[0m16:48:00.730403 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.579 seconds
+[0m16:48:00.733855 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TRADE_DB, now create_TRADE_DB_DBT_CURATED)
+[0m16:48:00.734152 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TRADE_DB, now create_TRADE_DB_DBT_STAGING)
+[0m16:48:00.734436 [debug] [ThreadPool]: Creating schema "database: "TRADE_DB"
+schema: "DBT_CURATED"
+"
+[0m16:48:00.734604 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_TRADE_DB, now create_TRADE_DB_DBT_INTERMEDIATE)
+[0m16:48:00.734806 [debug] [ThreadPool]: Creating schema "database: "TRADE_DB"
+schema: "DBT_STAGING"
+"
+[0m16:48:00.738561 [debug] [ThreadPool]: Using snowflake connection "create_TRADE_DB_DBT_CURATED"
+[0m16:48:00.738785 [debug] [ThreadPool]: Creating schema "database: "TRADE_DB"
+schema: "DBT_INTERMEDIATE"
+"
+[0m16:48:00.739619 [debug] [ThreadPool]: Using snowflake connection "create_TRADE_DB_DBT_STAGING"
+[0m16:48:00.739767 [debug] [ThreadPool]: On create_TRADE_DB_DBT_CURATED: create schema if not exists TRADE_DB.DBT_CURATED
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "create_TRADE_DB_DBT_CURATED"} */
+[0m16:48:00.740572 [debug] [ThreadPool]: Using snowflake connection "create_TRADE_DB_DBT_INTERMEDIATE"
+[0m16:48:00.740718 [debug] [ThreadPool]: On create_TRADE_DB_DBT_STAGING: create schema if not exists TRADE_DB.DBT_STAGING
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "create_TRADE_DB_DBT_STAGING"} */
+[0m16:48:00.741029 [debug] [ThreadPool]: On create_TRADE_DB_DBT_INTERMEDIATE: create schema if not exists TRADE_DB.DBT_INTERMEDIATE
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "create_TRADE_DB_DBT_INTERMEDIATE"} */
+[0m16:48:00.918321 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.177 seconds
+[0m16:48:00.919985 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.178 seconds
+[0m16:48:00.995604 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.254 seconds
+[0m16:48:01.000401 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_TRADE_DB_DBT_INTERMEDIATE, now list_TRADE_DB_DBT_CURATED)
+[0m16:48:01.007326 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_TRADE_DB_DBT_CURATED, now list_TRADE_DB_DBT_STAGING)
+[0m16:48:01.018059 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB_DBT_STAGING"
+[0m16:48:01.018527 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_TRADE_DB_DBT_STAGING, now list_TRADE_DB_DBT_INTERMEDIATE)
+[0m16:48:01.018861 [debug] [ThreadPool]: On list_TRADE_DB_DBT_STAGING: show objects in TRADE_DB.DBT_STAGING
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB_DBT_STAGING"} */;
+[0m16:48:01.020905 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB_DBT_CURATED"
+[0m16:48:01.022479 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB_DBT_INTERMEDIATE"
+[0m16:48:01.022836 [debug] [ThreadPool]: On list_TRADE_DB_DBT_CURATED: show objects in TRADE_DB.DBT_CURATED
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB_DBT_CURATED"} */;
+[0m16:48:01.023428 [debug] [ThreadPool]: On list_TRADE_DB_DBT_INTERMEDIATE: show objects in TRADE_DB.DBT_INTERMEDIATE
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB_DBT_INTERMEDIATE"} */;
+[0m16:48:01.233939 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.211 seconds
+[0m16:48:01.334575 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.310 seconds
+[0m16:48:01.439778 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.415 seconds
+[0m16:48:01.442933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12045b110>]}
+[0m16:48:01.462736 [debug] [Thread-1 (]: Began running node model.trade_pipeline.stg_trades
+[0m16:48:01.463502 [info ] [Thread-1 (]: 1 of 5 START sql view model DBT_STAGING.stg_trades ............................. [RUN]
+[0m16:48:01.464060 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_TRADE_DB_DBT_CURATED, now model.trade_pipeline.stg_trades)
+[0m16:48:01.464472 [debug] [Thread-1 (]: Began compiling node model.trade_pipeline.stg_trades
+[0m16:48:01.474509 [debug] [Thread-1 (]: Writing injected SQL for node "model.trade_pipeline.stg_trades"
+[0m16:48:01.475892 [debug] [Thread-1 (]: Began executing node model.trade_pipeline.stg_trades
+[0m16:48:01.499565 [debug] [Thread-1 (]: Writing runtime sql for node "model.trade_pipeline.stg_trades"
+[0m16:48:01.500928 [debug] [Thread-1 (]: Using snowflake connection "model.trade_pipeline.stg_trades"
+[0m16:48:01.501194 [debug] [Thread-1 (]: On model.trade_pipeline.stg_trades: create or replace   view TRADE_DB.DBT_STAGING.stg_trades
+  
+  
+  
+  
+  as (
+    
+
+with deduplicated as (
+    select
+        event_id,
+        trade_id,
+        version,
+        counterparty_id,
+        instrument_id,
+        trade_date,
+        maturity_date,
+        quantity,
+        price,
+        upper(currency) as currency,
+        upper(side) as side,
+        source_system,
+        event_ts,
+        batch_id,
+        source_file,
+        ingested_at,
+        row_number() over (partition by event_id order by ingested_at desc) as rn
+    from TRADE_DB.RAW.raw_trades
+)
+select * exclude rn
+from deduplicated
+where rn = 1
+  )
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.stg_trades"} */;
+[0m16:48:01.715553 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.214 seconds
+[0m16:48:01.743370 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122872090>]}
+[0m16:48:01.744078 [info ] [Thread-1 (]: 1 of 5 OK created sql view model DBT_STAGING.stg_trades ........................ [[32mSUCCESS 1[0m in 0.28s]
+[0m16:48:01.744561 [debug] [Thread-1 (]: Finished running node model.trade_pipeline.stg_trades
+[0m16:48:01.745418 [debug] [Thread-2 (]: Began running node model.trade_pipeline.int_trade_decisions
+[0m16:48:01.745876 [info ] [Thread-2 (]: 2 of 5 START sql view model DBT_INTERMEDIATE.int_trade_decisions ............... [RUN]
+[0m16:48:01.746296 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_TRADE_DB_DBT_STAGING, now model.trade_pipeline.int_trade_decisions)
+[0m16:48:01.746612 [debug] [Thread-2 (]: Began compiling node model.trade_pipeline.int_trade_decisions
+[0m16:48:01.749752 [debug] [Thread-2 (]: On "model.trade_pipeline.int_trade_decisions": cache miss for schema "TRADE_DB.CURATED", this is inefficient
+[0m16:48:01.751635 [debug] [Thread-2 (]: Using snowflake connection "model.trade_pipeline.int_trade_decisions"
+[0m16:48:01.751920 [debug] [Thread-2 (]: On model.trade_pipeline.int_trade_decisions: show objects in TRADE_DB.CURATED
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.int_trade_decisions"} */;
+[0m16:48:01.962373 [debug] [Thread-2 (]: SQL status: SUCCESS 0 in 0.210 seconds
+[0m16:48:01.964670 [debug] [Thread-2 (]: While listing relations in database=TRADE_DB, schema=CURATED, found: 
+[0m16:48:01.965212 [debug] [Thread-2 (]: Writing injected SQL for node "model.trade_pipeline.int_trade_decisions"
+[0m16:48:01.966472 [debug] [Thread-2 (]: Began executing node model.trade_pipeline.int_trade_decisions
+[0m16:48:01.969515 [debug] [Thread-2 (]: Writing runtime sql for node "model.trade_pipeline.int_trade_decisions"
+[0m16:48:01.972105 [debug] [Thread-2 (]: Using snowflake connection "model.trade_pipeline.int_trade_decisions"
+[0m16:48:01.972561 [debug] [Thread-2 (]: On model.trade_pipeline.int_trade_decisions: create or replace   view TRADE_DB.DBT_INTERMEDIATE.int_trade_decisions
+  
+  
+  
+  
+  as (
+    
+
+with incoming as (
+    select *
+    from TRADE_DB.DBT_STAGING.stg_trades
+),
+current_state as (
+    
+    select cast(null as string) trade_id, cast(null as number) existing_version where false
+    
+),
+ranked_batch as (
+    select
+        i.*,
+        c.existing_version,
+        max(i.version) over (partition by i.trade_id) as max_incoming_version,
+        row_number() over (
+            partition by i.trade_id, i.version
+            order by i.event_ts desc, i.ingested_at desc, i.event_id desc
+        ) as same_version_rank
+    from incoming i
+    left join current_state c using (trade_id)
+)
+select
+    *,
+    case
+      when trade_id is null or trim(trade_id) = '' then 'REJECT'
+      when version is null or version < 1 then 'REJECT'
+      when maturity_date < current_date() then 'REJECT'
+      when quantity <= 0 then 'REJECT'
+      when price <= 0 then 'REJECT'
+      when currency not in ('USD','EUR','GBP','JPY') then 'REJECT'
+      when side not in ('BUY','SELL') then 'REJECT'
+      when existing_version is not null and version < existing_version then 'REJECT'
+      when version < max_incoming_version then 'REJECT'
+      when same_version_rank > 1 then 'REJECT'
+      else 'ACCEPT'
+    end as decision,
+    case
+      when trade_id is null or trim(trade_id) = '' then 'MISSING_TRADE_ID'
+      when version is null or version < 1 then 'INVALID_VERSION'
+      when maturity_date < current_date() then 'MATURITY_DATE_IN_PAST'
+      when quantity <= 0 then 'NON_POSITIVE_QUANTITY'
+      when price <= 0 then 'NON_POSITIVE_PRICE'
+      when currency not in ('USD','EUR','GBP','JPY') then 'INVALID_CURRENCY'
+      when side not in ('BUY','SELL') then 'INVALID_SIDE'
+      when existing_version is not null and version < existing_version then 'LOWER_THAN_EXISTING_VERSION'
+      when version < max_incoming_version then 'SUPERSEDED_IN_SAME_BATCH'
+      when same_version_rank > 1 then 'DUPLICATE_SAME_VERSION_EVENT'
+      else null
+    end as rejection_reason
+from ranked_batch
+  )
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.int_trade_decisions"} */;
+[0m16:48:02.535271 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.562 seconds
+[0m16:48:02.540557 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1208aafc0>]}
+[0m16:48:02.541681 [info ] [Thread-2 (]: 2 of 5 OK created sql view model DBT_INTERMEDIATE.int_trade_decisions .......... [[32mSUCCESS 1[0m in 0.79s]
+[0m16:48:02.542368 [debug] [Thread-2 (]: Finished running node model.trade_pipeline.int_trade_decisions
+[0m16:48:02.543518 [debug] [Thread-3 (]: Began running node model.trade_pipeline.current_trades
+[0m16:48:02.544048 [debug] [Thread-4 (]: Began running node model.trade_pipeline.rejected_trades
+[0m16:48:02.544567 [info ] [Thread-3 (]: 3 of 5 START sql incremental model DBT_CURATED.current_trades .................. [RUN]
+[0m16:48:02.545106 [info ] [Thread-4 (]: 4 of 5 START sql incremental model DBT_CURATED.rejected_trades ................. [RUN]
+[0m16:48:02.545803 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_TRADE_DB_DBT_INTERMEDIATE, now model.trade_pipeline.current_trades)
+[0m16:48:02.546380 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.trade_pipeline.rejected_trades'
+[0m16:48:02.546826 [debug] [Thread-3 (]: Began compiling node model.trade_pipeline.current_trades
+[0m16:48:02.547205 [debug] [Thread-4 (]: Began compiling node model.trade_pipeline.rejected_trades
+[0m16:48:02.555727 [debug] [Thread-3 (]: Writing injected SQL for node "model.trade_pipeline.current_trades"
+[0m16:48:02.558715 [debug] [Thread-4 (]: Writing injected SQL for node "model.trade_pipeline.rejected_trades"
+[0m16:48:02.559712 [debug] [Thread-4 (]: Began executing node model.trade_pipeline.rejected_trades
+[0m16:48:02.560062 [debug] [Thread-3 (]: Began executing node model.trade_pipeline.current_trades
+[0m16:48:02.613411 [debug] [Thread-3 (]: Writing runtime sql for node "model.trade_pipeline.current_trades"
+[0m16:48:02.613817 [debug] [Thread-4 (]: Writing runtime sql for node "model.trade_pipeline.rejected_trades"
+[0m16:48:02.614695 [debug] [Thread-4 (]: Using snowflake connection "model.trade_pipeline.rejected_trades"
+[0m16:48:02.615193 [debug] [Thread-3 (]: Using snowflake connection "model.trade_pipeline.current_trades"
+[0m16:48:02.615388 [debug] [Thread-4 (]: On model.trade_pipeline.rejected_trades: create or replace transient table TRADE_DB.DBT_CURATED.rejected_trades
+    
+    
+    
+    as (
+
+select
+    event_id,
+    trade_id,
+    version,
+    counterparty_id,
+    instrument_id,
+    trade_date,
+    maturity_date,
+    quantity,
+    price,
+    currency,
+    side,
+    source_system,
+    event_ts,
+    batch_id,
+    source_file,
+    rejection_reason,
+    current_timestamp() as rejected_at
+from TRADE_DB.DBT_INTERMEDIATE.int_trade_decisions
+where decision = 'REJECT'
+
+    )
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.rejected_trades"} */;
+[0m16:48:02.615585 [debug] [Thread-3 (]: On model.trade_pipeline.current_trades: create or replace transient table TRADE_DB.DBT_CURATED.current_trades
+    
+    
+    
+    as (
+
+select
+    trade_id,
+    version,
+    counterparty_id,
+    instrument_id,
+    trade_date,
+    maturity_date,
+    quantity,
+    price,
+    currency,
+    side,
+    source_system,
+    event_ts,
+    batch_id,
+    event_id as source_event_id,
+    current_timestamp() as updated_at
+from TRADE_DB.DBT_INTERMEDIATE.int_trade_decisions
+where decision = 'ACCEPT'
+
+qualify row_number() over (
+  partition by trade_id
+  order by version desc, event_ts desc, ingested_at desc, event_id desc
+) = 1
+    )
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.current_trades"} */;
+[0m16:48:02.615762 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m16:48:04.935947 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 2.319 seconds
+[0m16:48:04.947123 [debug] [Thread-3 (]: Applying DROP to: TRADE_DB.DBT_CURATED.current_trades__dbt_tmp
+[0m16:48:04.948224 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 2.332 seconds
+[0m16:48:04.954928 [debug] [Thread-3 (]: Using snowflake connection "model.trade_pipeline.current_trades"
+[0m16:48:04.957339 [debug] [Thread-4 (]: Applying DROP to: TRADE_DB.DBT_CURATED.rejected_trades__dbt_tmp
+[0m16:48:04.957674 [debug] [Thread-3 (]: On model.trade_pipeline.current_trades: drop view if exists TRADE_DB.DBT_CURATED.current_trades__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.current_trades"} */
+[0m16:48:04.958465 [debug] [Thread-4 (]: Using snowflake connection "model.trade_pipeline.rejected_trades"
+[0m16:48:04.959197 [debug] [Thread-4 (]: On model.trade_pipeline.rejected_trades: drop view if exists TRADE_DB.DBT_CURATED.rejected_trades__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.rejected_trades"} */
+[0m16:48:05.112167 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.153 seconds
+[0m16:48:05.113499 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.154 seconds
+[0m16:48:05.117190 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120841e50>]}
+[0m16:48:05.119503 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120882570>]}
+[0m16:48:05.120357 [info ] [Thread-3 (]: 3 of 5 OK created sql incremental model DBT_CURATED.current_trades ............. [[32mSUCCESS 1[0m in 2.57s]
+[0m16:48:05.121675 [debug] [Thread-3 (]: Finished running node model.trade_pipeline.current_trades
+[0m16:48:05.120986 [info ] [Thread-4 (]: 4 of 5 OK created sql incremental model DBT_CURATED.rejected_trades ............ [[32mSUCCESS 1[0m in 2.57s]
+[0m16:48:05.122565 [debug] [Thread-4 (]: Finished running node model.trade_pipeline.rejected_trades
+[0m16:48:05.123139 [debug] [Thread-1 (]: Began running node model.trade_pipeline.trade_status
+[0m16:48:05.123583 [info ] [Thread-1 (]: 5 of 5 START sql view model DBT_CURATED.trade_status ........................... [RUN]
+[0m16:48:05.124006 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.trade_pipeline.stg_trades, now model.trade_pipeline.trade_status)
+[0m16:48:05.124345 [debug] [Thread-1 (]: Began compiling node model.trade_pipeline.trade_status
+[0m16:48:05.128520 [debug] [Thread-1 (]: Writing injected SQL for node "model.trade_pipeline.trade_status"
+[0m16:48:05.129596 [debug] [Thread-1 (]: Began executing node model.trade_pipeline.trade_status
+[0m16:48:05.132108 [debug] [Thread-1 (]: Writing runtime sql for node "model.trade_pipeline.trade_status"
+[0m16:48:05.133233 [debug] [Thread-1 (]: Using snowflake connection "model.trade_pipeline.trade_status"
+[0m16:48:05.133660 [debug] [Thread-1 (]: On model.trade_pipeline.trade_status: create or replace   view TRADE_DB.DBT_CURATED.trade_status
+  
+  
+  
+  
+  as (
+    
+
+select
+  *,
+  case when maturity_date < current_date() then 'EXPIRED' else 'VALID' end as trade_status
+from TRADE_DB.DBT_CURATED.current_trades
+  )
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "model.trade_pipeline.trade_status"} */;
+[0m16:48:05.343312 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.209 seconds
+[0m16:48:05.345215 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9fc0097b-9374-4785-8953-62fd31bd9711', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113b60910>]}
+[0m16:48:05.345726 [info ] [Thread-1 (]: 5 of 5 OK created sql view model DBT_CURATED.trade_status ...................... [[32mSUCCESS 1[0m in 0.22s]
+[0m16:48:05.346140 [debug] [Thread-1 (]: Finished running node model.trade_pipeline.trade_status
+[0m16:48:05.347132 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:48:05.347357 [debug] [MainThread]: Connection 'model.trade_pipeline.trade_status' was left open.
+[0m16:48:05.347558 [debug] [MainThread]: On model.trade_pipeline.trade_status: Close
+[0m16:48:05.451501 [debug] [MainThread]: Connection 'model.trade_pipeline.int_trade_decisions' was left open.
+[0m16:48:05.451917 [debug] [MainThread]: On model.trade_pipeline.int_trade_decisions: Close
+[0m16:48:05.632981 [debug] [MainThread]: Connection 'model.trade_pipeline.current_trades' was left open.
+[0m16:48:05.633895 [debug] [MainThread]: On model.trade_pipeline.current_trades: Close
+[0m16:48:05.756170 [debug] [MainThread]: Connection 'model.trade_pipeline.rejected_trades' was left open.
+[0m16:48:05.756686 [debug] [MainThread]: On model.trade_pipeline.rejected_trades: Close
+[0m16:48:05.871625 [info ] [MainThread]: 
+[0m16:48:05.872317 [info ] [MainThread]: Finished running 2 incremental models, 3 view models in 0 hours 0 minutes and 6.79 seconds (6.79s).
+[0m16:48:05.873616 [debug] [MainThread]: Command end result
+[0m16:48:05.897693 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/manifest.json
+[0m16:48:05.899855 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/semantic_manifest.json
+[0m16:48:05.904438 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/run_results.json
+[0m16:48:05.904713 [info ] [MainThread]: 
+[0m16:48:05.904952 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:48:05.905132 [info ] [MainThread]: 
+[0m16:48:05.905334 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m16:48:05.908484 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 7.5863695, "process_in_blocks": "0", "process_kernel_time": 0.56371, "process_mem_max_rss": "197263360", "process_out_blocks": "0", "process_user_time": 1.878529}
+[0m16:48:05.908869 [debug] [MainThread]: Command `dbt run` succeeded at 16:48:05.908806 after 7.59 seconds
+[0m16:48:05.909112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a6c770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1214d6810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1214d7410>]}
+[0m16:48:05.909337 [debug] [MainThread]: Flushing usage events
+[0m16:48:07.205296 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:48:46.609010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105775550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10689b750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10689b890>]}
+
+
+============================== 16:48:46.612318 | 256c59ee-4dbd-4d42-93b0-d723d200a972 ==============================
+[0m16:48:46.612318 [info ] [MainThread]: Running with dbt=1.10.11
+[0m16:48:46.612635 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt test', 'use_experimental_parser': 'False', 'warn_error': 'None', 'no_print': 'None', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'log_path': '/Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/logs', 'version_check': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'static_parser': 'True', 'log_format': 'default', 'printer_width': '80', 'log_cache_events': 'False', 'target_path': 'None', 'quiet': 'False', 'partial_parse': 'True', 'profiles_dir': '/Users/mayank/.dbt'}
+[0m16:48:46.999877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '256c59ee-4dbd-4d42-93b0-d723d200a972', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ba76f0>]}
+[0m16:48:47.028117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '256c59ee-4dbd-4d42-93b0-d723d200a972', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075f59d0>]}
+[0m16:48:47.029818 [info ] [MainThread]: Registered adapter: snowflake=1.10.2
+[0m16:48:47.093578 [debug] [MainThread]: checksum: 5335e1629744fab92fa7809c625edbb36f0d7063a879d6215c971798f27e66f9, vars: {}, profile: , target: , version: 1.10.11
+[0m16:48:47.209491 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:48:47.209729 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:48:47.233971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '256c59ee-4dbd-4d42-93b0-d723d200a972', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10755b850>]}
+[0m16:48:47.281562 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/manifest.json
+[0m16:48:47.283264 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/semantic_manifest.json
+[0m16:48:47.313940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '256c59ee-4dbd-4d42-93b0-d723d200a972', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c6b3e0>]}
+[0m16:48:47.314240 [info ] [MainThread]: Found 5 models, 10 data tests, 1 source, 520 macros
+[0m16:48:47.314407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '256c59ee-4dbd-4d42-93b0-d723d200a972', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c73d90>]}
+[0m16:48:47.315571 [info ] [MainThread]: 
+[0m16:48:47.315757 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:48:47.315897 [info ] [MainThread]: 
+[0m16:48:47.316158 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m16:48:47.318608 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB_DBT_INTERMEDIATE'
+[0m16:48:47.326388 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB_DBT_CURATED'
+[0m16:48:47.329529 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_TRADE_DB_DBT_STAGING'
+[0m16:48:47.383835 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB_DBT_INTERMEDIATE"
+[0m16:48:47.384166 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB_DBT_CURATED"
+[0m16:48:47.384342 [debug] [ThreadPool]: On list_TRADE_DB_DBT_INTERMEDIATE: show objects in TRADE_DB.DBT_INTERMEDIATE
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB_DBT_INTERMEDIATE"} */;
+[0m16:48:47.384530 [debug] [ThreadPool]: Using snowflake connection "list_TRADE_DB_DBT_STAGING"
+[0m16:48:47.384681 [debug] [ThreadPool]: On list_TRADE_DB_DBT_CURATED: show objects in TRADE_DB.DBT_CURATED
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB_DBT_CURATED"} */;
+[0m16:48:47.384831 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:48:47.384969 [debug] [ThreadPool]: On list_TRADE_DB_DBT_STAGING: show objects in TRADE_DB.DBT_STAGING
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "connection_name": "list_TRADE_DB_DBT_STAGING"} */;
+[0m16:48:47.385102 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:48:47.385296 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:48:48.800207 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.415 seconds
+[0m16:48:48.804500 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.419 seconds
+[0m16:48:49.088733 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.703 seconds
+[0m16:48:49.093125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '256c59ee-4dbd-4d42-93b0-d723d200a972', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107bba680>]}
+[0m16:48:49.110069 [debug] [Thread-2 (]: Began running node test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507
+[0m16:48:49.110631 [debug] [Thread-3 (]: Began running node test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9
+[0m16:48:49.111061 [debug] [Thread-1 (]: Began running node test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1
+[0m16:48:49.111455 [debug] [Thread-4 (]: Began running node test.trade_pipeline.assert_no_current_trade_has_non_positive_values
+[0m16:48:49.111904 [info ] [Thread-2 (]: 2 of 10 START test accepted_values_current_trades_side__BUY__SELL .............. [RUN]
+[0m16:48:49.112498 [info ] [Thread-3 (]: 3 of 10 START test accepted_values_trade_status_trade_status__VALID__EXPIRED ... [RUN]
+[0m16:48:49.113013 [info ] [Thread-1 (]: 1 of 10 START test accepted_values_current_trades_currency__USD__EUR__GBP__JPY . [RUN]
+[0m16:48:49.113464 [info ] [Thread-4 (]: 4 of 10 START test assert_no_current_trade_has_non_positive_values ............. [RUN]
+[0m16:48:49.114003 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_TRADE_DB_DBT_CURATED, now test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507)
+[0m16:48:49.114445 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_TRADE_DB_DBT_STAGING, now test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9)
+[0m16:48:49.114840 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_TRADE_DB_DBT_INTERMEDIATE, now test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1)
+[0m16:48:49.115342 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.trade_pipeline.assert_no_current_trade_has_non_positive_values'
+[0m16:48:49.115785 [debug] [Thread-2 (]: Began compiling node test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507
+[0m16:48:49.116234 [debug] [Thread-3 (]: Began compiling node test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9
+[0m16:48:49.116617 [debug] [Thread-1 (]: Began compiling node test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1
+[0m16:48:49.116989 [debug] [Thread-4 (]: Began compiling node test.trade_pipeline.assert_no_current_trade_has_non_positive_values
+[0m16:48:49.133478 [debug] [Thread-3 (]: Writing injected SQL for node "test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9"
+[0m16:48:49.133810 [debug] [Thread-2 (]: Writing injected SQL for node "test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507"
+[0m16:48:49.137574 [debug] [Thread-1 (]: Writing injected SQL for node "test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1"
+[0m16:48:49.139352 [debug] [Thread-4 (]: Writing injected SQL for node "test.trade_pipeline.assert_no_current_trade_has_non_positive_values"
+[0m16:48:49.140481 [debug] [Thread-1 (]: Began executing node test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1
+[0m16:48:49.140890 [debug] [Thread-2 (]: Began executing node test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507
+[0m16:48:49.152625 [debug] [Thread-4 (]: Began executing node test.trade_pipeline.assert_no_current_trade_has_non_positive_values
+[0m16:48:49.159478 [debug] [Thread-1 (]: Writing runtime sql for node "test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1"
+[0m16:48:49.159711 [debug] [Thread-3 (]: Began executing node test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9
+[0m16:48:49.161140 [debug] [Thread-2 (]: Writing runtime sql for node "test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507"
+[0m16:48:49.162643 [debug] [Thread-4 (]: Writing runtime sql for node "test.trade_pipeline.assert_no_current_trade_has_non_positive_values"
+[0m16:48:49.164049 [debug] [Thread-3 (]: Writing runtime sql for node "test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9"
+[0m16:48:49.164980 [debug] [Thread-2 (]: Using snowflake connection "test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507"
+[0m16:48:49.165300 [debug] [Thread-2 (]: On test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        side as value_field,
+        count(*) as n_records
+
+    from TRADE_DB.DBT_CURATED.current_trades
+    group by side
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'BUY','SELL'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507"} */
+[0m16:48:49.165839 [debug] [Thread-1 (]: Using snowflake connection "test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1"
+[0m16:48:49.166357 [debug] [Thread-3 (]: Using snowflake connection "test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9"
+[0m16:48:49.167030 [debug] [Thread-1 (]: On test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        currency as value_field,
+        count(*) as n_records
+
+    from TRADE_DB.DBT_CURATED.current_trades
+    group by currency
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'USD','EUR','GBP','JPY'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1"} */
+[0m16:48:49.167419 [debug] [Thread-4 (]: Using snowflake connection "test.trade_pipeline.assert_no_current_trade_has_non_positive_values"
+[0m16:48:49.167691 [debug] [Thread-3 (]: On test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        trade_status as value_field,
+        count(*) as n_records
+
+    from TRADE_DB.DBT_CURATED.trade_status
+    group by trade_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'VALID','EXPIRED'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9"} */
+[0m16:48:49.168303 [debug] [Thread-4 (]: On test.trade_pipeline.assert_no_current_trade_has_non_positive_values: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select *
+from TRADE_DB.DBT_CURATED.current_trades
+where quantity <= 0 or price <= 0
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.assert_no_current_trade_has_non_positive_values"} */
+[0m16:48:49.169317 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m16:48:49.415890 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.249 seconds
+[0m16:48:49.429006 [info ] [Thread-2 (]: 2 of 10 PASS accepted_values_current_trades_side__BUY__SELL .................... [[32mPASS[0m in 0.31s]
+[0m16:48:49.429718 [debug] [Thread-2 (]: Finished running node test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507
+[0m16:48:49.430114 [debug] [Thread-2 (]: Began running node test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0
+[0m16:48:49.430429 [info ] [Thread-2 (]: 5 of 10 START test not_null_current_trades_trade_id ............................ [RUN]
+[0m16:48:49.430980 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.trade_pipeline.accepted_values_current_trades_side__BUY__SELL.fc4645c507, now test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0)
+[0m16:48:49.431434 [debug] [Thread-2 (]: Began compiling node test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0
+[0m16:48:49.437663 [debug] [Thread-2 (]: Writing injected SQL for node "test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0"
+[0m16:48:49.438445 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.270 seconds
+[0m16:48:49.440100 [info ] [Thread-3 (]: 3 of 10 PASS accepted_values_trade_status_trade_status__VALID__EXPIRED ......... [[32mPASS[0m in 0.33s]
+[0m16:48:49.440539 [debug] [Thread-3 (]: Finished running node test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9
+[0m16:48:49.440949 [debug] [Thread-3 (]: Began running node test.trade_pipeline.not_null_current_trades_version.6c5564e334
+[0m16:48:49.441400 [info ] [Thread-3 (]: 6 of 10 START test not_null_current_trades_version ............................. [RUN]
+[0m16:48:49.441805 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.trade_pipeline.accepted_values_trade_status_trade_status__VALID__EXPIRED.d6ff3735d9, now test.trade_pipeline.not_null_current_trades_version.6c5564e334)
+[0m16:48:49.442086 [debug] [Thread-2 (]: Began executing node test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0
+[0m16:48:49.442332 [debug] [Thread-3 (]: Began compiling node test.trade_pipeline.not_null_current_trades_version.6c5564e334
+[0m16:48:49.447595 [debug] [Thread-2 (]: Writing runtime sql for node "test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0"
+[0m16:48:49.450153 [debug] [Thread-3 (]: Writing injected SQL for node "test.trade_pipeline.not_null_current_trades_version.6c5564e334"
+[0m16:48:49.450797 [debug] [Thread-3 (]: Began executing node test.trade_pipeline.not_null_current_trades_version.6c5564e334
+[0m16:48:49.452577 [debug] [Thread-3 (]: Writing runtime sql for node "test.trade_pipeline.not_null_current_trades_version.6c5564e334"
+[0m16:48:49.453103 [debug] [Thread-2 (]: Using snowflake connection "test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0"
+[0m16:48:49.453400 [debug] [Thread-2 (]: On test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trade_id
+from TRADE_DB.DBT_CURATED.current_trades
+where trade_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0"} */
+[0m16:48:49.454159 [debug] [Thread-3 (]: Using snowflake connection "test.trade_pipeline.not_null_current_trades_version.6c5564e334"
+[0m16:48:49.454665 [debug] [Thread-3 (]: On test.trade_pipeline.not_null_current_trades_version.6c5564e334: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select version
+from TRADE_DB.DBT_CURATED.current_trades
+where version is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.not_null_current_trades_version.6c5564e334"} */
+[0m16:48:49.586053 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.418 seconds
+[0m16:48:49.588055 [info ] [Thread-1 (]: 1 of 10 PASS accepted_values_current_trades_currency__USD__EUR__GBP__JPY ....... [[32mPASS[0m in 0.47s]
+[0m16:48:49.588546 [debug] [Thread-1 (]: Finished running node test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1
+[0m16:48:49.588837 [debug] [Thread-1 (]: Began running node test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f
+[0m16:48:49.589161 [info ] [Thread-1 (]: 7 of 10 START test not_null_rejected_trades_event_id ........................... [RUN]
+[0m16:48:49.589525 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.trade_pipeline.accepted_values_current_trades_currency__USD__EUR__GBP__JPY.23450d5cc1, now test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f)
+[0m16:48:49.589793 [debug] [Thread-1 (]: Began compiling node test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f
+[0m16:48:49.592805 [debug] [Thread-1 (]: Writing injected SQL for node "test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f"
+[0m16:48:49.594169 [debug] [Thread-1 (]: Began executing node test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f
+[0m16:48:49.596585 [debug] [Thread-1 (]: Writing runtime sql for node "test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f"
+[0m16:48:49.597598 [debug] [Thread-1 (]: Using snowflake connection "test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f"
+[0m16:48:49.597846 [debug] [Thread-1 (]: On test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_id
+from TRADE_DB.DBT_CURATED.rejected_trades
+where event_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f"} */
+[0m16:48:49.607094 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.152 seconds
+[0m16:48:49.608519 [info ] [Thread-3 (]: 6 of 10 PASS not_null_current_trades_version ................................... [[32mPASS[0m in 0.17s]
+[0m16:48:49.608880 [debug] [Thread-3 (]: Finished running node test.trade_pipeline.not_null_current_trades_version.6c5564e334
+[0m16:48:49.609127 [debug] [Thread-3 (]: Began running node test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d
+[0m16:48:49.609347 [info ] [Thread-3 (]: 8 of 10 START test not_null_rejected_trades_rejection_reason ................... [RUN]
+[0m16:48:49.609591 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.trade_pipeline.not_null_current_trades_version.6c5564e334, now test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d)
+[0m16:48:49.609804 [debug] [Thread-3 (]: Began compiling node test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d
+[0m16:48:49.612491 [debug] [Thread-3 (]: Writing injected SQL for node "test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d"
+[0m16:48:49.613176 [debug] [Thread-3 (]: Began executing node test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d
+[0m16:48:49.614987 [debug] [Thread-3 (]: Writing runtime sql for node "test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d"
+[0m16:48:49.615631 [debug] [Thread-3 (]: Using snowflake connection "test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d"
+[0m16:48:49.615868 [debug] [Thread-3 (]: On test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select rejection_reason
+from TRADE_DB.DBT_CURATED.rejected_trades
+where rejection_reason is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d"} */
+[0m16:48:49.767699 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.152 seconds
+[0m16:48:49.769577 [info ] [Thread-3 (]: 8 of 10 PASS not_null_rejected_trades_rejection_reason ......................... [[32mPASS[0m in 0.16s]
+[0m16:48:49.770047 [debug] [Thread-3 (]: Finished running node test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d
+[0m16:48:49.770370 [debug] [Thread-3 (]: Began running node test.trade_pipeline.unique_current_trades_trade_id.4292a7e361
+[0m16:48:49.770637 [info ] [Thread-3 (]: 9 of 10 START test unique_current_trades_trade_id .............................. [RUN]
+[0m16:48:49.770936 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.trade_pipeline.not_null_rejected_trades_rejection_reason.f540d4c66d, now test.trade_pipeline.unique_current_trades_trade_id.4292a7e361)
+[0m16:48:49.771272 [debug] [Thread-3 (]: Began compiling node test.trade_pipeline.unique_current_trades_trade_id.4292a7e361
+[0m16:48:49.776285 [debug] [Thread-3 (]: Writing injected SQL for node "test.trade_pipeline.unique_current_trades_trade_id.4292a7e361"
+[0m16:48:49.777271 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.179 seconds
+[0m16:48:49.778797 [info ] [Thread-1 (]: 7 of 10 PASS not_null_rejected_trades_event_id ................................. [[32mPASS[0m in 0.19s]
+[0m16:48:49.779375 [debug] [Thread-1 (]: Finished running node test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f
+[0m16:48:49.779719 [debug] [Thread-1 (]: Began running node test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6
+[0m16:48:49.780035 [info ] [Thread-1 (]: 10 of 10 START test unique_rejected_trades_event_id ............................ [RUN]
+[0m16:48:49.780374 [debug] [Thread-3 (]: Began executing node test.trade_pipeline.unique_current_trades_trade_id.4292a7e361
+[0m16:48:49.780667 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.trade_pipeline.not_null_rejected_trades_event_id.856f00ec4f, now test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6)
+[0m16:48:49.782387 [debug] [Thread-3 (]: Writing runtime sql for node "test.trade_pipeline.unique_current_trades_trade_id.4292a7e361"
+[0m16:48:49.782639 [debug] [Thread-1 (]: Began compiling node test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6
+[0m16:48:49.786023 [debug] [Thread-1 (]: Writing injected SQL for node "test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6"
+[0m16:48:49.786653 [debug] [Thread-1 (]: Began executing node test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6
+[0m16:48:49.788337 [debug] [Thread-1 (]: Writing runtime sql for node "test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6"
+[0m16:48:49.788943 [debug] [Thread-3 (]: Using snowflake connection "test.trade_pipeline.unique_current_trades_trade_id.4292a7e361"
+[0m16:48:49.789228 [debug] [Thread-3 (]: On test.trade_pipeline.unique_current_trades_trade_id.4292a7e361: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    trade_id as unique_field,
+    count(*) as n_records
+
+from TRADE_DB.DBT_CURATED.current_trades
+where trade_id is not null
+group by trade_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.unique_current_trades_trade_id.4292a7e361"} */
+[0m16:48:49.790278 [debug] [Thread-1 (]: Using snowflake connection "test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6"
+[0m16:48:49.790618 [debug] [Thread-1 (]: On test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    event_id as unique_field,
+    count(*) as n_records
+
+from TRADE_DB.DBT_CURATED.rejected_trades
+where event_id is not null
+group by event_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.11", "profile_name": "trade_pipeline", "target_name": "dev", "node_id": "test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6"} */
+[0m16:48:50.165703 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.711 seconds
+[0m16:48:50.169947 [info ] [Thread-2 (]: 5 of 10 PASS not_null_current_trades_trade_id .................................. [[32mPASS[0m in 0.74s]
+[0m16:48:50.171618 [debug] [Thread-2 (]: Finished running node test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0
+[0m16:48:50.172705 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.383 seconds
+[0m16:48:50.175172 [info ] [Thread-3 (]: 9 of 10 PASS unique_current_trades_trade_id .................................... [[32mPASS[0m in 0.40s]
+[0m16:48:50.175890 [debug] [Thread-3 (]: Finished running node test.trade_pipeline.unique_current_trades_trade_id.4292a7e361
+[0m16:48:51.124276 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 1.955 seconds
+[0m16:48:51.129665 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.339 seconds
+[0m16:48:51.128428 [info ] [Thread-4 (]: 4 of 10 PASS assert_no_current_trade_has_non_positive_values ................... [[32mPASS[0m in 2.01s]
+[0m16:48:51.132727 [info ] [Thread-1 (]: 10 of 10 PASS unique_rejected_trades_event_id .................................. [[32mPASS[0m in 1.35s]
+[0m16:48:51.133547 [debug] [Thread-4 (]: Finished running node test.trade_pipeline.assert_no_current_trade_has_non_positive_values
+[0m16:48:51.134135 [debug] [Thread-1 (]: Finished running node test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6
+[0m16:48:51.136149 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:48:51.136671 [debug] [MainThread]: Connection 'test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6' was left open.
+[0m16:48:51.137010 [debug] [MainThread]: On test.trade_pipeline.unique_rejected_trades_event_id.dcebb4c4b6: Close
+[0m16:48:51.230932 [debug] [MainThread]: Connection 'test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0' was left open.
+[0m16:48:51.231586 [debug] [MainThread]: On test.trade_pipeline.not_null_current_trades_trade_id.b2f3a085b0: Close
+[0m16:48:51.453927 [debug] [MainThread]: Connection 'test.trade_pipeline.unique_current_trades_trade_id.4292a7e361' was left open.
+[0m16:48:51.454616 [debug] [MainThread]: On test.trade_pipeline.unique_current_trades_trade_id.4292a7e361: Close
+[0m16:48:51.566349 [debug] [MainThread]: Connection 'test.trade_pipeline.assert_no_current_trade_has_non_positive_values' was left open.
+[0m16:48:51.566836 [debug] [MainThread]: On test.trade_pipeline.assert_no_current_trade_has_non_positive_values: Close
+[0m16:48:51.707013 [info ] [MainThread]: 
+[0m16:48:51.707924 [info ] [MainThread]: Finished running 10 data tests in 0 hours 0 minutes and 4.39 seconds (4.39s).
+[0m16:48:51.710251 [debug] [MainThread]: Command end result
+[0m16:48:51.738073 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/manifest.json
+[0m16:48:51.740418 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/semantic_manifest.json
+[0m16:48:51.746319 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/mayank/Documents/trade-data-platform/trade-data-platform/dbt_trade_project/target/run_results.json
+[0m16:48:51.746617 [info ] [MainThread]: 
+[0m16:48:51.746880 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:48:51.747081 [info ] [MainThread]: 
+[0m16:48:51.747301 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=10
+[0m16:48:51.750180 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 5.1859283, "process_in_blocks": "0", "process_kernel_time": 0.549783, "process_mem_max_rss": "193675264", "process_out_blocks": "0", "process_user_time": 1.751671}
+[0m16:48:51.750578 [debug] [MainThread]: Command `dbt test` succeeded at 16:48:51.750510 after 5.19 seconds
+[0m16:48:51.750820 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10672a390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e3f14f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e3f1f40>]}
+[0m16:48:51.751051 [debug] [MainThread]: Flushing usage events
+[0m16:48:52.736740 [debug] [MainThread]: An error was encountered while trying to flush usage events
