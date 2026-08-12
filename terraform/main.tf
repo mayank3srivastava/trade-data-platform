@@ -1,5 +1,5 @@
 resource "snowflake_database" "trade" {
-  name = var.database_name
+  name    = var.database_name
   comment = "Trade data engineering case study"
 }
 
